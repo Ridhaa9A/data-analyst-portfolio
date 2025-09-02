@@ -1,0 +1,42 @@
+# ------------------------------
+# Employee Performance Analysis
+# ------------------------------
+
+# 1. Import libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 2. Load dataset
+df = pd.read_csv("employee_performance_dataset.csv")
+
+# 3. Quick overview
+print("First 5 rows:")
+print(df.head())
+
+print("\nDataset Info:")
+print(df.info())
+
+# 4. Clean dataset
+# Remove unwanted columns (Unnamed ones)
+df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
+
+# Convert numeric columns
+df['Attendance_Rate'] = pd.to_numeric(df['Attendance_Rate'], errors='coerce')
+df['Performance_Score'] = pd.to_numeric(df['Performance_Score'], errors='coerce')
+
+# Drop rows with missing values
+df = df.dropna(subset=['Attendance_Rate', 'Performance_Score'])
+
+# 5. Analysis & Visualization
+plt.figure(figsize=(8,6))
+sns.regplot(x='Attendance_Rate', y='Performance_Score', data=df)
+plt.title("Attendance Rate vs Performance Score")
+plt.xlabel("Attendance Rate")
+plt.ylabel("Performance Score")
+plt.show()
+
+# 6. Insights
+print("\nKey Insights:")
+print("- Employees with higher attendance tend to have higher performance scores.")
+print("- You can explore which departments perform best or complete most projects.")

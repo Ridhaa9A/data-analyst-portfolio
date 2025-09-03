@@ -1,58 +1,50 @@
-# Ridhaa Ahmed – Data Analyst Portfolio
+# Data Analyst Portfolio – Ridhaa Ahmed
 
-Welcome to my Data Analyst portfolio! This repository showcases my skills in data cleaning, analysis, and visualisation using Python and real-world datasets. It highlights projects I’ve completed to practice and demonstrate my analytical capabilities.
+## Overview
+This portfolio showcases my data analysis skills using a real-world employee performance dataset. The dataset contains information about employees' attendance, performance scores, projects completed, salary, and other key attributes. The goal of this analysis was to explore the relationship between attendance rate and performance score, and gain insights useful for management decisions.
 
----
+## Dataset Description
+- **Employee_ID**: Unique identifier for each employee  
+- **Name**: Employee’s full name  
+- **Department**: Department in which the employee works  
+- **Hire_Date**: Date the employee was hired  
+- **Salary**: Employee’s salary  
+- **Attendance_Rate**: Fraction of days the employee attended work  
+- **Projects_Completed**: Number of projects completed by the employee  
+- **Performance_Score**: Performance evaluation score  
+- **Manager**: Name of the employee’s manager  
 
-## 📂 Project Structure
+The dataset was cleaned and transformed to ensure numeric fields were correctly formatted, and missing values were handled appropriately.
 
-1. **Dataset Description**  
-   Contains details about the datasets used, where they come from, and what each column represents.  
+## Analysis Steps
+1. Loaded the dataset in Python using `pandas`.
+2. Renamed columns for clarity.
+3. Converted `Attendance_Rate` and `Performance_Score` to numeric values.
+4. Removed rows with missing values in these columns.
+5. Created a scatter plot with a regression line using `seaborn` to visualize the relationship between attendance and performance.
 
-2. **Visualisations**  
-   Includes charts, scatter plots, and histograms generated during analysis. Key insights are visualized for easier understanding.  
-
-3. **Code Snippets**  
-   Highlights key Python scripts used for cleaning, transforming, and analyzing the data. Full code with comments is provided for clarity.  
-
-4. **Datasets**  
-   Original CSV files used for analysis.  
-
----
-
-## 📊 Sample Project: Employee Performance Analysis
-
-**Objective:**  
-Analyse the relationship between employee attendance and performance scores to uncover trends and insights.
-
-**Steps Taken:**  
-1. Loaded the CSV dataset using Python and Pandas.  
-2. Cleaned the data: renamed columns, converted numeric columns, and removed missing values.  
-3. Visualized relationships using scatter plots with regression lines.  
-4. Derived insights on how attendance correlates with performance.  
-
-**Key Code Used:**
+### Key Code Snippets
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load dataset
+# Load CSV
 df = pd.read_csv("employee_performance_dataset.csv", header=0)
 
 # Rename columns
-df.columns = [
-    "Employee_ID", "Name", "Department", "Hire_Date", 
-    "Salary", "Attendance_Rate", "Projects_Completed", 
-    "Performance_Score", "Manager"
-]
+df.columns = ["Employee_ID", "Name", "Department", "Hire_Date", 
+              "Salary", "Attendance_Rate", "Projects_Completed", 
+              "Performance_Score", "Manager"]
 
-# Convert to numeric and drop missing values
+# Convert to numeric
 df['Attendance_Rate'] = pd.to_numeric(df['Attendance_Rate'], errors='coerce')
 df['Performance_Score'] = pd.to_numeric(df['Performance_Score'], errors='coerce')
+
+# Drop missing values
 df = df.dropna(subset=['Attendance_Rate', 'Performance_Score'])
 
-# Scatter plot
+# Scatter plot with regression line
 plt.figure(figsize=(8,6))
 sns.regplot(x="Attendance_Rate", y="Performance_Score", data=df)
 plt.title("Attendance Rate vs Performance Score")
@@ -60,15 +52,21 @@ plt.xlabel("Attendance Rate")
 plt.ylabel("Performance Score")
 plt.show()
 
-Insights:
-Higher attendance often correlates with higher performance scores.
-Some employees with lower attendance still achieve good performance, suggesting other factors may contribute.
-Useful for management decisions regarding productivity and resource allocation.
-📈 Skills Demonstrated
-Python (Pandas, Matplotlib, Seaborn)
-Data Cleaning and Transformation
-Exploratory Data Analysis (EDA)
-Visualization and Reporting
-🔗 Contact
-GitHub: Ridhaa9A
-Email: ridhaaahmed2002@gmail.com
+## Insights
+- Higher attendance generally correlates with higher performance scores.
+- Some employees with lower attendance still perform well, suggesting other factors affect performance.
+- These insights can assist management in making data-driven decisions about productivity and resource allocation.
+
+## Skills Demonstrated
+- Python (Pandas, Matplotlib, Seaborn)
+- Data Cleaning and Transformation
+- Exploratory Data Analysis (EDA)
+- Visualization and Reporting
+
+## Contact
+- GitHub: [Ridhaa9A](https://github.com/Ridhaa9A)
+- Email: ridhaaahmed2002@gmail.com
+
+## Analysis Result
+
+![Attendance vs Performance](https://github.com/Ridhaa9A/data-analyst-portfolio/blob/main/3.Visualizations%20%E2%80%93%20charts%2C%20scatter%20plots%2C%20histograms%2C%20etc/Attendance%20Rate%20vs%20Peformance%20Score%3AScatter%20graph%20.png)

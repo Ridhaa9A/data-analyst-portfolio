@@ -23,7 +23,7 @@ Welcome to my Data Analyst portfolio! This repository showcases my skills in dat
 ## 📊 Sample Project: Employee Performance Analysis
 
 **Objective:**  
-Analyze the relationship between employee attendance and performance scores to uncover trends and insights.
+Analyse the relationship between employee attendance and performance scores to uncover trends and insights.
 
 **Steps Taken:**  
 1. Loaded the CSV dataset using Python and Pandas.  
@@ -59,3 +59,16 @@ plt.title("Attendance Rate vs Performance Score")
 plt.xlabel("Attendance Rate")
 plt.ylabel("Performance Score")
 plt.show()
+
+Insights:
+Higher attendance often correlates with higher performance scores.
+Some employees with lower attendance still achieve good performance, suggesting other factors may contribute.
+Useful for management decisions regarding productivity and resource allocation.
+📈 Skills Demonstrated
+Python (Pandas, Matplotlib, Seaborn)
+Data Cleaning and Transformation
+Exploratory Data Analysis (EDA)
+Visualization and Reporting
+🔗 Contact
+GitHub: Ridhaa9A
+Email: ridhaaahmed2002@gmail.com

@@ -1,6 +1,6 @@
 # Ridhaa Ahmed – Data Analyst Portfolio
 
-Welcome to my Data Analyst portfolio! This repository showcases my skills in data cleaning, analysis, and visualization using Python and real-world datasets. It highlights projects I’ve completed to practice and demonstrate my analytical capabilities.
+Welcome to my Data Analyst portfolio! This repository showcases my skills in data cleaning, analysis, and visualisation using Python and real-world datasets. It highlights projects I’ve completed to practice and demonstrate my analytical capabilities.
 
 ---
 
@@ -9,7 +9,7 @@ Welcome to my Data Analyst portfolio! This repository showcases my skills in dat
 1. **Dataset Description**  
    Contains details about the datasets used, where they come from, and what each column represents.  
 
-2. **Visualizations**  
+2. **Visualisations**  
    Includes charts, scatter plots, and histograms generated during analysis. Key insights are visualized for easier understanding.  
 
 3. **Code Snippets**  
